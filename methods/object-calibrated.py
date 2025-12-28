@@ -224,7 +224,7 @@ if __name__ == "__main__":
     parser.add_argument("--front_video", required=True)
     parser.add_argument("--side_video", required=True)
     parser.add_argument("--height", type=float, required=True)
-    parser.add_argument("--output", default="object_calibrated_output.json")
+    parser.add_argument("--output", default="outputs/object_calibrated_output.json")
 
     args = parser.parse_args()
 

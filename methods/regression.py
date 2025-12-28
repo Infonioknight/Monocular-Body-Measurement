@@ -47,7 +47,7 @@ def extract_visible_landmarks(landmarks, frame_w, frame_h):
 
     return True, coords
 
-def run_method2(video_path, shoulder_width_inches, chest_model, waist_model):
+def run_method2(video_path, shoulder_width_inches, gender_input, chest_model, waist_model):
     cap = cv2.VideoCapture(video_path)
 
     pose = mp.solutions.pose.Pose()
@@ -94,6 +94,11 @@ def run_method2(video_path, shoulder_width_inches, chest_model, waist_model):
     if final_coords is None:
         raise RuntimeError("No valid frame sequence found.")
 
+    if gender_input.lower() == 'male' or gender_input.lower() == 'm':
+        gender = 0
+    else:
+        gender = 1
+    
     thigh = calculate_distance(final_coords['Right Knee'], final_coords['Right Hip']) * scaling_factor
     calf = thigh * 0.65
     forearm = calculate_distance(final_coords['Right Elbow'], final_coords['Right Wrist']) * scaling_factor
@@ -102,11 +107,12 @@ def run_method2(video_path, shoulder_width_inches, chest_model, waist_model):
     leg_height = calculate_distance(final_coords['Right Hip'],final_coords['Right Foot']) * scaling_factor * SCALING_CONSTANTS['LEG_SCALE']
 
     X = pd.DataFrame([[
+        gender,
         calf,
         forearm,
         shoulder,
         thigh
-    ]], columns=['calf', 'forearm', 'shoulder-breadth', 'thigh'])
+    ]], columns=['gender', 'calf', 'forearm', 'shoulder-breadth', 'thigh'])
 
     chest = float(chest_model.predict(X)[0])
 
@@ -121,7 +127,8 @@ def run_method2(video_path, shoulder_width_inches, chest_model, waist_model):
         "torso_height": round(torso_height, 2),
         "leg_height": round(leg_height, 2),
         "chest": round(chest, 2),
-        "waist": round(waist, 2)
+        "waist": round(waist, 2),
+        "gender": gender
     }
 
 # -----------------------------
@@ -132,9 +139,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Regression Method")
     parser.add_argument("--video", required=True)
     parser.add_argument("--shoulder_width", type=float, required=True)
+    parser.add_argument("--gender", type=str, required=True)
     parser.add_argument("--chest_model", default="models/chest_model.pkl")
     parser.add_argument("--waist_model", default="models/waist_model.pkl")
-    parser.add_argument("--output", default="regression_output.json")
+    parser.add_argument("--output", default="outputs/regression_output.json")
 
     args = parser.parse_args()
 
@@ -147,6 +155,7 @@ if __name__ == "__main__":
     results = run_method2(
         args.video,
         args.shoulder_width,
+        args.gender,
         chest_model,
         waist_model
     )

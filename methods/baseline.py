@@ -108,7 +108,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Baseline Version")
     parser.add_argument("--video", required=True, help="video path")
     parser.add_argument("--shoulder_width", type=float, required=True, help="Calibration reference measurement")
-    parser.add_argument("--output", default="baseline_output.json")
+    parser.add_argument("--output", default="outputs/baseline_output.json")
 
     args = parser.parse_args()
 
