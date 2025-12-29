@@ -1,2 +1,9 @@
 checkpoints
 env
+Test-Videos
+outputs
+outputs_abbu
+outputs_gau
+
+measure.txt
+.DS_Store

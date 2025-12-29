@@ -1,11 +1,11 @@
 {
-  "shoulder_width": 14.5,
-  "calf": 10.64,
-  "forearm": 9.28,
-  "thigh": 16.37,
-  "torso_height": 20.51,
-  "leg_height": 34.39,
-  "chest": 35.05,
-  "waist": 27.37,
-  "gender": 0
+  "shoulder_width": 12.0,
+  "calf": 8.77,
+  "forearm": 8.66,
+  "thigh": 13.49,
+  "torso_height": 16.75,
+  "leg_height": 27.92,
+  "chest": 29.07,
+  "waist": 21.06,
+  "gender": 1
 }
