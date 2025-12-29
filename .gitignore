@@ -1,3 +1,5 @@
+.DS_Store
+
 checkpoints
 env
 Test-Videos
@@ -6,4 +8,3 @@ outputs_abbu
 outputs_gau
 
 measure.txt
-.DS_Store
