@@ -23,7 +23,7 @@ LANDMARKS_TO_TRACK = {
 
 SCALING_CONSTANTS = {
     'WAIST_SCALE': 3.7,
-    'LEG_SCALE': 1,
+    'LEG_SCALE': 1.1,
     'TORSO_SCALE': 0.95,
 }
 
