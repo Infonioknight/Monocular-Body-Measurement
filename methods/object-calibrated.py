@@ -197,10 +197,7 @@ def run_method(front_video, side_video, height_cli):
     leg = calculate_distance(front_coords['Right Hip'], front_coords['Right Foot']) * SCALING_CONSTANTS['LEG_SCALE'] / scaling_factor
 
     # Side view
-    try:
-        side_frame, _ = wait_for_valid_frame(side_video, LANDMARKS_RIGHT)
-    except:
-        side_frame, _ = wait_for_valid_frame(side_video, LANDMARKS_LEFT)
+    side_frame, _ = wait_for_valid_frame(side_video, LANDMARKS_RIGHT)
     side_img = Image.fromarray(cv2.cvtColor(side_frame, cv2.COLOR_BGR2RGB))
     labels_s, masks_s = grounding_and_sam(side_img)
 

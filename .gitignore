@@ -4,7 +4,9 @@ checkpoints
 env
 Test-Videos
 outputs
-outputs_abbu
-outputs_gau
+outputs_a
+outputs_g
+datasets
+Literature Review
 
 measure.txt
