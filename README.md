@@ -56,11 +56,12 @@ python methods/regression.py
 ### Method 3: (Object Calibrated, Silhouette Assisted Method)
 
 This method requires the user to have two videos.
-    - First being a front-view with the user holding a card (credit card or another card with the EXACT same dimensions) flat on their chest. Also ensure the view is clear from head to toe, and ensure you are stationary for best measurements.
 
-    - Second being a side view with the user clearly standing with their side facing the camera, being visible head to toe.
+- First being a front-view with the user holding a card (credit card or another card with the EXACT same dimensions) flat on their chest. Ensure the view is clear from head to toe, and remain stationary for best measurements.
+- Second being a side view with the user clearly standing side-on to the camera, visible head to toe.
 
-**Note:** Ensure there is sufficient colour contrast between the your clothing and the card to ensure reliable detection.
+**Note:** Ensure there is sufficient colour contrast between your clothing and the card to ensure reliable detection.
+
 
 ```
 python methods/object-calibrated.py 
