@@ -3,6 +3,9 @@
 Empirical evaluation of three monocular approaches for estimating human body measurements
 (chest, waist) under weak calibration and constrained capture conditions.
 
+## Preprint
+You can view the current version of the paper [here](Final-Draft.pdf)
+
 ## Methods
 - Method 1 (baseline.py): Anthropometric Calibration Baseline
 - Method 2 (regression.py): Pose-Based Regression for Circumferential Estimation
