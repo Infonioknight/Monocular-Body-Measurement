@@ -4,7 +4,7 @@ Empirical evaluation of three monocular approaches for estimating human body mea
 (chest, waist) under weak calibration and constrained capture conditions.
 
 ## Preprint
-You can view the current version of the paper [here](Final-Draft.pdf)
+You can view the current version of the paper [here](https://arxiv.org/abs/2601.01639)
 
 ## Methods
 - Method 1 (baseline.py): Anthropometric Calibration Baseline
