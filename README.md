@@ -18,9 +18,12 @@ You can view the current version of the paper [here](https://arxiv.org/abs/2601.
 - Clothing effects discussed explicitly
 
 ## Repository Structure
-methods/    # runnable scripts for each method
-models/     # trained regression models
-notebooks/  # training notebook for the Regression models + EDA
+```
+.
+├── methods/      # Runnable scripts for each method
+├── models/       # Trained regression models
+└── notebooks/    # Training notebooks and EDA
+```
 
 ## Reproducibility
 ```
